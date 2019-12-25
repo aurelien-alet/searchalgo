@@ -1,2 +1,8 @@
 # TryAlgo repo
 tryalgo/*
+
+# keys repo
+keys/*
+
+# venv directory
+venv/*
