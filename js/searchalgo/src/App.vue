@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <h3>SearchAlgo</h3>
-    <div>{{ test }}</div>
+    <h1 class="text-centered">SearchAlgo</h1>
     <page></page>
   </div>
 </template>
 
 <script>
 import Page from './components/Page.vue'
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 export default {
   name: 'app',
@@ -16,7 +16,7 @@ export default {
   },
   data() {
       return {
-          test: "ok"
+
       }
   }
 }
@@ -24,4 +24,5 @@ export default {
 
 <style>
   @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+  @import "./style.css";
 </style>

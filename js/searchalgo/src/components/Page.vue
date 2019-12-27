@@ -1,21 +1,20 @@
 <template>
-    <div>
-        <div class="card bg-light mb-3" v-for="(file, index) in files" :key="index">
-            <div class="card-header">{{ file.EN.name }}.py</div>
-            <div class="card-body">
-                <!-- <h5 class="card-title">Light card title</h5> -->
-                <p class="card-text">{{ file.EN.description }}</p>
-            </div>
-        </div>
+    <div class="padding-sides-1-rem">
+        <search></search>
+        <card-list :files="files"></card-list>
     </div>
 </template>
 
 <script>
-    import files from '../../../../data/description.json'
-    export default {
-        name: 'app',
-        components: {
+    import files from '../../../../data/description.json';
+    import Search from './search/Search.vue';
+    import CardList from './card-list/Card-list.vue';
 
+    export default {
+        name: 'page',
+        components: {
+            Search,
+            CardList,
         },
         props: {
         },

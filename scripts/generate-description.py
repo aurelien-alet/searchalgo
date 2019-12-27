@@ -141,7 +141,7 @@ def get_functions_description(module, translate=False):
 
         fonctions_desc.append({
             "name": function_name,
-            "decription": function_doc,
+            "description": function_doc,
         })       
 
     return fonctions_desc

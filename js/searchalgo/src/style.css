@@ -1,0 +1,33 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.blue-text {
+    color: #007bff;;
+}
+
+.blue-text-hover:hover {
+    color: #1e5c9a;
+}
+
+.padding-sides-1-rem {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.padding-tops-0-5-rem {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.text-centered {
+    text-align: center
+}
+
+.width-30-percent {
+    width: 30%;
+}
