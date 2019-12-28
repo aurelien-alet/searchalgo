@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="card bg-light mb-3">
+        <div class="card mb-3">
             <!-- <div class="card-header row" data-toggle="collapse" :data-target="'#collapse-' + name" aria-expanded="true" aria-controls="'#collapse-' + name"> -->
             <div class="card-header">
                 <div class="row">
@@ -16,9 +16,9 @@
             </div>
             <!-- <div class="card-body collapse" :id="'collapse-' + name"> -->
             <div class="card-body">
-                <description v-show="selectedTab == 'Description'" :description="description"></description>
-                <functions v-show="selectedTab == 'Functions'" :functions="functions"></functions>
-                <classes v-show="selectedTab == 'Classes'" :classes="classes"></classes>
+                <description v-if="selectedTab == 'Description'" :description="description"></description>
+                <functions v-if="selectedTab == 'Functions'" :functions="functions"></functions>
+                <classes v-if="selectedTab == 'Classes'" :classes="classes"></classes>
             </div>
         </div>
     </div>

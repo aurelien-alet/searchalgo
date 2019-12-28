@@ -2,7 +2,9 @@
     <div>
         <div v-for="(func, index) in functions" :key="index">
             <h4 class="card-title">{{ func.name }}</h4>
-            <p class="card-text">{{ func.description }}</p>
+            <div class="form-group">
+                <textarea class="form-control" v-model="func.description" readonly></textarea>
+            </div>
         </div>
     </div>
 </template>
@@ -29,7 +31,12 @@
         },
         computed: {
 
-        }
+        },
+        mounted() {
+            this.$el.querySelectorAll('textarea').forEach( function(el) {
+                el.style.height = el.scrollHeight + 2 + "px";
+            });
+        },
     }
 </script>
 

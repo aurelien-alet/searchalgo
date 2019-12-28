@@ -1,6 +1,6 @@
 <template>
     <div class="form-group width-30-percent">
-        <input class="form-control">
+        <input class="form-control" @keyup="filterFiles" v-model="filter">
     </div>
 </template>
 
@@ -11,19 +11,24 @@
 
         },
         props: {
-
+            files: {
+                type: Array,
+                required: true
+            },
         },
         data() {
             return {
-
+                filter: "",
             }
         },
         methods: {
-
+            filterFiles() {
+                this.$emit('filter-files', this.filter);
+            }
         },
         computed: {
 
-        }
+        },
     }
 </script>
 

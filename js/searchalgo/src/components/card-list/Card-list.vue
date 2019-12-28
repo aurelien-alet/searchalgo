@@ -1,6 +1,6 @@
 <template>
     <div>
-        <card v-for="(file, index) in files" :key="index"
+        <card v-for="file in files" :key="file.EN.name"
             :name="file.EN.name"
             :description="file.EN.description"
             :functions="file.EN.functions"

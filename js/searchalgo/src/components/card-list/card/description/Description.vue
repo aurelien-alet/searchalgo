@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <p class="card-text">{{ description }}</p>
+    <div class="form-group no-margin">
+        <textarea class="form-control" v-model="description" readonly></textarea>
     </div>
 </template>
 
@@ -26,7 +26,12 @@
         },
         computed: {
 
-        }
+        },
+        mounted() {
+            this.$el.querySelectorAll('textarea').forEach( function(el) {
+                el.style.height = el.scrollHeight + 2 + "px";
+            });
+        },
     }
 </script>
 
