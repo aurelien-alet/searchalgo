@@ -3,6 +3,7 @@
 
 import os
 import sys
+import json
 
 tryalgo_path = os.path.join("..", "tryalgo")
 tryalgo_tests_path = os.path.join(tryalgo_path, "tests")
@@ -101,10 +102,47 @@ def generate_examples():
 
         getattr(test_tryalgo, method)()
 
-    print(examples)
+    # print(examples)
+    save_examples(examples)
     
+def save_examples(examples):
+    """
+
+    """
+    description_file = os.path.join("..", "data", "description.json")
+
+    with open(description_file, "r") as f:
+        description_object = json.load(f)
     
+    for file_name, file_object in examples.items():
+        for func_name, func_example in file_object.items():
+
+            filtered_file = list(filter(
+                lambda x: x["EN"]["name"] == file_name,
+                description_object
+            ))
+
+            assert len(filtered_file) == 1 
+
+            filtered_function = list(filter(
+                lambda x: x["name"] == func_name,
+                filtered_file[0]["EN"]["functions"]
+            ))
+
+            assert len(filtered_function) <= 1
+
+            if not filtered_function:
+                print(file_name)
+                print(func_name)
+
+            if filtered_function:
+                filtered_function[0]["example"] = func_example
+
+    out_file = os.path.join("..", "data", "tmp.json")
+    with open(out_file, "w") as f:
+        f.write(json.dumps(description_object))
 
 if __name__ == "__main__":
 
     generate_examples()
+    # save_examples()
