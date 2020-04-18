@@ -155,7 +155,7 @@ def save_examples(examples, description_file):
         description_object = json.load(f)
     
     for file_name, file_object in examples.items():
-        for func_name, func_example in file_object.items():
+        for func_name, func_examples in file_object.items():
 
             filtered_file = list(filter(
                 lambda x: x["EN"]["name"] == file_name,
@@ -172,7 +172,7 @@ def save_examples(examples, description_file):
             assert len(filtered_function) <= 1
 
             if filtered_function:
-                filtered_function[0]["example"] = func_example
+                filtered_function[0]["examples"] = func_examples
 
     with open(description_file, "w") as f:
         f.write(json.dumps(description_object))

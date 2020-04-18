@@ -36,3 +36,20 @@
 .width-30-percent {
     width: 30%;
 }
+
+.purple-color {
+    color: purple;
+}
+
+.green-color {
+    color: green;
+}
+
+.min-width-12-ex {
+    min-width: 12ex;
+}
+
+.bold {
+    font-weight: bold;
+}
+

@@ -17,7 +17,7 @@
             <!-- <div class="card-body collapse" :id="'collapse-' + name"> -->
             <div class="card-body">
                 <description v-if="selectedTab == 'Description'" :description="description"></description>
-                <functions v-if="selectedTab == 'Functions'" :functions="functions"></functions>
+                <functions v-if="selectedTab == 'Functions'" :functions="functions" :fileName="name"></functions>
                 <classes v-if="selectedTab == 'Classes'" :classes="classes"></classes>
             </div>
         </div>
