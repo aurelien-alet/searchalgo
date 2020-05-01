@@ -1,5 +1,9 @@
 {
   "name": "searchalgo",
+  "author": {
+    "name": "Aurélien Alet"
+  },
+  "description": "A simple web interface to search some algorithms from TryAlgo (https://tryalgo.org/)",
   "version": "0.1.0",
   "private": true,
   "scripts": {
